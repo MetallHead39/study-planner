@@ -1,0 +1,152 @@
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
+  transition: all 0.25s ease;
+
+  &--completed {
+    background-color: #f8fafc;
+    border-color: #e2e8f0;
+
+    .task-item__title {
+      text-decoration: line-through;
+      color: #94a3b8;
+    }
+
+    .task-item__description {
+      color: #94a3b8;
+    }
+  }
+
+  &--pending-delete {
+    opacity: 0.55;
+    border-style: dashed;
+    border-color: #f59e0b;
+    background-color: #fffbeb;
+  }
+
+  &__main {
+    flex: 1;
+  }
+
+  &__checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+  }
+
+  &__checkbox {
+    width: 1.1rem;
+    height: 1.1rem;
+    accent-color: #2563eb;
+    cursor: pointer;
+  }
+
+  &__title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #0f172a;
+  }
+
+  &__description {
+    margin: 0.45rem 0 0.7rem 1.7rem;
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.4;
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-left: 1.7rem;
+  }
+
+  &__category,
+  &__priority,
+  &__pending-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.55rem;
+    border-radius: 6px;
+  }
+
+  &__category {
+    background-color: #e0e7ff;
+    color: #3730a3;
+  }
+
+  &__priority {
+    &--low {
+      background-color: #dcfce7;
+      color: #166534;
+    }
+
+    &--medium {
+      background-color: #fef3c7;
+      color: #92400e;
+    }
+
+    &--high {
+      background-color: #fee2e2;
+      color: #991b1b;
+    }
+  }
+
+  &__pending-badge {
+    background-color: #f59e0b;
+    color: #ffffff;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  &__btn {
+    padding: 0.4rem 0.75rem;
+    border-radius: 7px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &--edit {
+      background-color: #f1f5f9;
+      color: #334155;
+      border-color: #cbd5e1;
+
+      &:hover {
+        background-color: #e2e8f0;
+      }
+    }
+
+    &--delete {
+      background-color: #fef2f2;
+      color: #dc2626;
+      border-color: #fecaca;
+
+      &:hover {
+        background-color: #fee2e2;
+      }
+    }
+
+    &--undo {
+      background-color: #f59e0b;
+      color: #ffffff;
+      font-weight: 600;
+
+      &:hover {
+        background-color: #d97706;
+      }
+    }
+  }
+}
